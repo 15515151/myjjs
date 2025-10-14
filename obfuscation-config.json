@@ -1,0 +1,18 @@
+{
+  "compact": true,
+  "controlFlowFlattening": true,
+  "controlFlowFlatteningThreshold": 0.75,
+  "numbersToExpressions": true,
+  "stringArray": true,
+  "stringArrayCallsTransform": true,
+  "stringArrayEncoding": ["base64"],
+  "stringArrayIndexShift": true,
+  "stringArrayRotate": true,
+  "stringArrayShuffle": true,
+  "stringArrayWrappersCount": 2,
+  "stringArrayWrappersChainedCalls": true,
+  "stringArrayWrappersParametersMaxCount": 4,
+  "stringArrayWrappersType": "function",
+  "stringArrayThreshold": 0.75,
+  "unicodeEscapeSequence": false
+}
