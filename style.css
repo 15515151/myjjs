@@ -1,1 +1,15 @@
-#api-balance-checker-button .drawer-icon{transition:all .2s}#api-balance-checker-button .drawer-icon.active,#api-balance-checker-button .drawer-icon.active.closedIcon{color:var(--button-accent-color)!important}#api-balance-checker-button .drawer-icon:hover{color:var(--button-accent-color)!important;transform:scale(1.1)}
+/* API Balance Checker Styles */
+
+#api-balance-checker-button .drawer-icon {
+    transition: all 0.2s;
+}
+
+#api-balance-checker-button .drawer-icon.active,
+#api-balance-checker-button .drawer-icon.active.closedIcon {
+    color: var(--button-accent-color) !important;
+}
+
+#api-balance-checker-button .drawer-icon:hover {
+    color: var(--button-accent-color) !important;
+    transform: scale(1.1);
+}
