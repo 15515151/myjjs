@@ -1,5 +1,9 @@
 /* API Balance Checker Styles */
 
+#toast-container > .toast {
+    width: 300px !important;
+}
+
 #api-balance-checker-button .drawer-icon {
     transition: all 0.2s;
 }
@@ -12,4 +16,9 @@
 #api-balance-checker-button .drawer-icon:hover {
     color: var(--button-accent-color) !important;
     transform: scale(1.1);
+}
+
+/* Make the toastr notification wider for siliconflow queries */
+body.siliconflow-query #toast-container > .toast {
+    width: 400px !important;
 }

@@ -2,5 +2,8 @@
     "display_name": "API Balance Checker",
     "js": "index.js",
     "css": "style.css",
-    "loading_order": 101
+    "loading_order": 101,
+    "host_permissions": [
+        "https://api.siliconflow.cn/"
+    ]
 }
