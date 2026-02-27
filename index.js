@@ -59,7 +59,7 @@ jQuery(() => {
         // 从 localStorage 恢复设置
         const autoEnabled = localStorage.getItem('api-balance-checker-auto-enabled') === 'true';
         const autoNotify = localStorage.getItem('api-balance-checker-auto-notify') !== 'false';
-        const apiEndpoint = localStorage.getItem('api-balance-checker-api-endpoint') || 'api/usage/token';
+        const apiEndpoint = localStorage.getItem('api-balance-checker-api-endpoint') || 'dashboard/billing/usage';
 
         $('#api-balance-checker-auto-enabled').prop('checked', autoEnabled);
         $('#api-balance-checker-auto-notify').prop('checked', autoNotify);
@@ -125,7 +125,7 @@ jQuery(() => {
                 throw new Error('未在OpenAI设置中找到自定义URL或API密钥。');
             }
 
-            apiEndpoint = localStorage.getItem('api-balance-checker-api-endpoint') || 'api/usage/token';
+            apiEndpoint = localStorage.getItem('api-balance-checker-api-endpoint') || 'dashboard/billing/usage';
 
             // ===== 硅基流动 (SiliconFlow) 专用查询 =====
             if (apiEndpoint === 'siliconflow') {
@@ -155,55 +155,85 @@ jQuery(() => {
                     console.error('API Balance Checker' + (isAuto ? ' Auto' : '') + ': Query failed: ' + errorMsg);
                 }
             }
-            // ===== 通用代理查询 (api/usage/token 和 dashboard/billing/usage) =====
+            // ===== 通用查询 (api/usage/token 和 dashboard/billing/usage) =====
+            // 策略：优先直连，CORS 失败时自动回退代理
             else {
                 const apiOrigin = new URL(customUrl).origin;
                 const fullApiUrl = apiOrigin + '/' + apiEndpoint;
-
-                const proxyResponse = await fetch('https://apiproxy.9e.nz/proxy-request', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        apiKey: apiKey,
-                        apiUrl: fullApiUrl,
-                    }),
-                });
-
-                const proxyData = await proxyResponse.json();
                 const shouldNotify = isAuto ? $('#api-balance-checker-auto-notify').is(':checked') : true;
 
-                if (proxyResponse.ok) {
-                    let balanceText = '';
+                let responseData = null;
+                let usedProxy = false;
 
-                    if (proxyData.total_usage !== undefined) {
-                        // total_usage 格式 (以分为单位)
-                        const usageDollars = proxyData.total_usage / 100;
-                        balanceText = 'API已使用额度: ' + usageDollars.toFixed(2);
-                    } else if (proxyData.total_available !== undefined) {
-                        // total_available 格式 (以 token 为单位)
-                        const availableTokens = proxyData.total_available;
-                        const availableDollars = availableTokens / 500000;
-                        balanceText = 'API可用额度: ' + availableDollars.toFixed(2) + ' (原始值: ' + availableTokens + ')';
-                    } else if (proxyData.data && proxyData.data.total_available !== undefined) {
-                        // 嵌套 data.total_available 格式
-                        const nestedAvailable = proxyData.data.total_available;
-                        const nestedDollars = nestedAvailable / 500000;
-                        balanceText = 'API可用额度: ' + nestedDollars.toFixed(2) + ' (原始值: ' + nestedAvailable + ')';
-                    } else {
-                        if (shouldNotify) toastr.error('查询失败: 代理返回数据格式不正确。');
-                        console.error('API Balance Checker: Invalid data format from proxy.', proxyData);
+                // 第一步：尝试直连
+                try {
+                    const directResponse = await fetch(fullApiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': 'Bearer ' + apiKey,
+                        },
+                    });
+                    responseData = await directResponse.json();
+                    console.log('API Balance Checker: 直连查询成功');
+                } catch (directErr) {
+                    // 直连失败（通常是 CORS），回退代理
+                    console.warn('API Balance Checker: 直连失败，尝试代理...', directErr.message);
+
+                    try {
+                        const proxyResponse = await fetch('https://apiproxy.9e.nz/proxy-request', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                apiKey: apiKey,
+                                apiUrl: fullApiUrl,
+                            }),
+                        });
+
+                        if (!proxyResponse.ok) {
+                            const proxyErr = await proxyResponse.json().catch(() => ({}));
+                            const errorMsg = proxyErr.error || '代理服务器返回状态 ' + proxyResponse.status;
+                            if (shouldNotify) toastr.error('查询失败: ' + errorMsg);
+                            console.error('API Balance Checker: Proxy query failed: ' + errorMsg);
+                            return;
+                        }
+
+                        responseData = await proxyResponse.json();
+                        usedProxy = true;
+                        console.log('API Balance Checker: 代理查询成功');
+                    } catch (proxyErr) {
+                        if (shouldNotify) toastr.error('查询失败: 直连和代理均不可用');
+                        console.error('API Balance Checker: Both direct and proxy failed', proxyErr);
                         return;
                     }
-
-                    if (shouldNotify) toastr.info(balanceText);
-                    console.log('API Balance Checker' + (isAuto ? ' Auto' : '') + ': ' + balanceText);
-                } else {
-                    const errorMsg = proxyData.error || '代理服务器返回状态 ' + proxyResponse.status;
-                    if (shouldNotify) toastr.error('查询失败: ' + errorMsg);
-                    console.error('API Balance Checker' + (isAuto ? ' Auto' : '') + ': Query failed: ' + errorMsg);
                 }
+
+                // 解析余额数据
+                let balanceText = '';
+
+                if (responseData.total_usage !== undefined) {
+                    // total_usage 格式 (以分为单位)
+                    const usageDollars = responseData.total_usage / 100;
+                    balanceText = 'API已使用额度: ' + usageDollars.toFixed(2);
+                } else if (responseData.total_available !== undefined) {
+                    // total_available 格式 (以 token 为单位)
+                    const availableTokens = responseData.total_available;
+                    const availableDollars = availableTokens / 500000;
+                    balanceText = 'API可用额度: ' + availableDollars.toFixed(2) + ' (原始值: ' + availableTokens + ')';
+                } else if (responseData.data && responseData.data.total_available !== undefined) {
+                    // 嵌套 data.total_available 格式
+                    const nestedAvailable = responseData.data.total_available;
+                    const nestedDollars = nestedAvailable / 500000;
+                    balanceText = 'API可用额度: ' + nestedDollars.toFixed(2) + ' (原始值: ' + nestedAvailable + ')';
+                } else {
+                    if (shouldNotify) toastr.error('查询失败: 返回数据格式不正确。');
+                    console.error('API Balance Checker: Invalid data format.', responseData);
+                    return;
+                }
+
+                if (shouldNotify) toastr.info(balanceText);
+                console.log('API Balance Checker' + (isAuto ? ' Auto' : '') + ': ' + balanceText);
             }
         } catch (err) {
             console.error('API Balance Checker' + (isAuto ? ' Auto' : '') + ' Error:', err);

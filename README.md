@@ -11,14 +11,16 @@ SillyTavern 扩展插件 —— 一键查询 API 账户余额。
 
 ## 📡 支持的 API 端点
 
-| 端点类型 | 说明 |
-|---|---|
-| `api/usage/token` | 通用余额查询端点（默认） |
-| `dashboard/billing/usage` | OpenAI 兼容格式 |
-| `siliconflow` | 硅基流动专用（直连查询） |
+| 端点类型 | 说明 | 查询方式 |
+|---|---|---|
+| `dashboard/billing/usage` | OpenAI 兼容格式（默认） | 优先直连，失败走代理 |
+| `api/usage/token` | 通用余额查询端点 | 优先直连，失败走代理 |
+| `siliconflow` | 硅基流动专用 | 始终直连 |
 
-- **硅基流动**：直接调用 `https://api.siliconflow.cn/v1/user/info` 查询
-- **其他端点**：通过代理服务 `https://apiproxy.9e.nz/proxy-request` 转发查询
+### 查询策略
+
+- **硅基流动**：直接调用 `https://api.siliconflow.cn/v1/user/info`，无需代理
+- **其他端点**：插件会先尝试**直连**你的 API 地址查询余额。如果因为 CORS（跨域）限制导致直连失败，会自动**回退到代理服务** `https://apiproxy.9e.nz/proxy-request` 进行查询
 
 ## ⚠️ 前置要求
 
