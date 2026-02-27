@@ -32,6 +32,10 @@ SillyTavern 扩展插件 —— 一键查询 API 账户余额。
 +allowKeysExposure: true
 ```
 
+如图所示，找到该配置项并修改为 `true`：
+
+![修改 allowKeysExposure 配置示例](help.png)
+
 3. 重启 SillyTavern 使配置生效
 
 > [!IMPORTANT]
