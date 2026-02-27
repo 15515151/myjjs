@@ -1,1 +1,257 @@
-(function(_0x16b140,_0x206452){const _0xfcf633=a0_0x48fd,_0x39e897=_0x16b140();while(!![]){try{const _0x347388=parseInt(_0xfcf633(0x141))/0x1+-parseInt(_0xfcf633(0x137))/0x2+-parseInt(_0xfcf633(0x113))/0x3*(-parseInt(_0xfcf633(0x107))/0x4)+-parseInt(_0xfcf633(0x133))/0x5+parseInt(_0xfcf633(0x129))/0x6*(parseInt(_0xfcf633(0x152))/0x7)+-parseInt(_0xfcf633(0x136))/0x8+-parseInt(_0xfcf633(0x124))/0x9;if(_0x347388===_0x206452)break;else _0x39e897['push'](_0x39e897['shift']());}catch(_0x149f5f){_0x39e897['push'](_0x39e897['shift']());}}}(a0_0x4a33,0xa4fb2),jQuery(()=>{const _0x2352ed=a0_0x48fd;console['log']('API\x20Balance\x20Checker:\x20Initializing\x20button.');if($(_0x2352ed(0x134))[_0x2352ed(0x13c)]===0x0){const _0x279485=_0x2352ed(0x11b);$(_0x2352ed(0x10b))[_0x2352ed(0x158)](_0x279485);}if($(_0x2352ed(0x15d))['length']===0x0){const _0x144721=_0x2352ed(0x12c);$(_0x2352ed(0x15e))[_0x2352ed(0x105)](_0x144721);const _0xfedf6f=localStorage[_0x2352ed(0x143)]('api-balance-checker-auto-enabled')===_0x2352ed(0x11d),_0x215319=localStorage[_0x2352ed(0x143)](_0x2352ed(0x115))!=='false',_0x3d6b17=localStorage[_0x2352ed(0x143)](_0x2352ed(0x12f))||_0x2352ed(0x103);$('#api-balance-checker-auto-enabled')[_0x2352ed(0x126)](_0x2352ed(0x14c),_0xfedf6f),$('#api-balance-checker-auto-notify')[_0x2352ed(0x126)](_0x2352ed(0x14c),_0x215319),$(_0x2352ed(0x128))[_0x2352ed(0x13b)](_0x3d6b17);}const _0x244db9=async(_0x30e0bf=![])=>{const _0x14bf44=_0x2352ed;toastr[_0x14bf44(0x14a)][_0x14bf44(0x155)]=![];const _0xd153c5=SillyTavern['getContext']();if(typeof _0xd153c5[_0x14bf44(0x10f)]===_0x14bf44(0x149)){if(!_0x30e0bf)toastr['error'](_0x14bf44(0x153));return;}const _0x238e20=$(_0x14bf44(0xf9));!_0x30e0bf&&(_0x238e20[_0x14bf44(0x147)](_0x14bf44(0x104)),_0x238e20[_0x14bf44(0x11a)](_0x14bf44(0x114))[_0x14bf44(0x121)](_0x14bf44(0x110)));let _0x18eb7f;try{let _0x27c02f=_0xd153c5['chatCompletionSettings'][_0x14bf44(0x100)],_0x313701=_0xd153c5[_0x14bf44(0x10f)][_0x14bf44(0x159)];if(_0xd153c5['chatCompletionSettings'][_0x14bf44(0x109)]===_0x14bf44(0x145))try{const _0x2aa93d=_0xd153c5['getRequestHeaders'](),_0x2cabc5=await fetch(_0x14bf44(0x14e),{'method':'POST','headers':_0x2aa93d});if(!_0x2cabc5['ok'])throw new Error(_0x14bf44(0x102)+_0x2cabc5[_0x14bf44(0x127)]+')');const _0x2f6fd0=await _0x2cabc5[_0x14bf44(0x116)]();if(_0x2f6fd0['api_key_custom'])_0x27c02f=_0x2f6fd0[_0x14bf44(0x12b)];else throw new Error(_0x14bf44(0x12d));}catch(_0x475b96){console[_0x14bf44(0x150)](_0x14bf44(0x148),_0x475b96);if(!_0x30e0bf)toastr[_0x14bf44(0x150)](_0x14bf44(0x11f)+_0x475b96[_0x14bf44(0x144)]);if(!_0x30e0bf)_0x238e20[_0x14bf44(0x11a)](_0x14bf44(0x139))[_0x14bf44(0x121)]('fa-wallet');return;}if(!_0x313701||!_0x27c02f)throw new Error('未在OpenAI设置中找到自定义URL或API密钥。');_0x18eb7f=localStorage[_0x14bf44(0x143)](_0x14bf44(0x12f))||_0x14bf44(0x103);if(_0x18eb7f===_0x14bf44(0x11c)){$(_0x14bf44(0x151))[_0x14bf44(0x121)](_0x14bf44(0x131));const _0x5e2398=_0x14bf44(0x135),_0x12c8a9=await fetch(_0x5e2398,{'method':_0x14bf44(0x142),'headers':{'Authorization':_0x14bf44(0xfd)+_0x27c02f}}),_0x41a7eb=await _0x12c8a9[_0x14bf44(0x116)](),_0x394369=_0x30e0bf?$('#api-balance-checker-auto-notify')['is'](_0x14bf44(0x10c)):!![];if(_0x12c8a9['ok']){let _0x540130='硅基总额度:\x20'+_0x41a7eb[_0x14bf44(0x108)][_0x14bf44(0x106)]+_0x14bf44(0x125)+_0x41a7eb['data']['chargeBalance']+_0x14bf44(0x13d)+_0x41a7eb['data'][_0x14bf44(0x15b)];if(_0x394369)toastr['info'](_0x540130);console[_0x14bf44(0x14d)](_0x14bf44(0x122)+(_0x30e0bf?_0x14bf44(0xfc):'')+':\x20'+_0x540130);}else{const _0x53fddf=_0x41a7eb['message']||_0x14bf44(0x12e)+_0x12c8a9[_0x14bf44(0x127)];if(_0x394369)toastr[_0x14bf44(0x150)](_0x14bf44(0x119)+_0x53fddf);console['error'](_0x14bf44(0x122)+(_0x30e0bf?_0x14bf44(0xfc):'')+_0x14bf44(0x146)+_0x53fddf);}}else{const _0x17fa16=new URL(_0x313701)[_0x14bf44(0x101)],_0x25f045=_0x17fa16+'/'+_0x18eb7f,_0x1f652a=await fetch(_0x14bf44(0xfa),{'method':_0x14bf44(0x14b),'headers':{'Content-Type':'application/json'},'body':JSON[_0x14bf44(0x13e)]({'apiKey':_0x27c02f,'apiUrl':_0x25f045})}),_0x114f4a=await _0x1f652a['json'](),_0x2810bb=_0x30e0bf?$('#api-balance-checker-auto-notify')['is'](_0x14bf44(0x10c)):!![];if(_0x1f652a['ok']){let _0x3cdca6='';if(_0x114f4a[_0x14bf44(0x156)]!==undefined){const _0x20de3a=_0x114f4a[_0x14bf44(0x156)]/0x64;_0x3cdca6=_0x14bf44(0x14f)+_0x20de3a[_0x14bf44(0x10a)](0x2);}else{if(_0x114f4a[_0x14bf44(0x138)]!==undefined){const _0x332274=_0x114f4a[_0x14bf44(0x138)],_0x274be7=_0x332274/0x7a120;_0x3cdca6=_0x14bf44(0x140)+_0x274be7['toFixed'](0x2)+_0x14bf44(0x11e)+_0x332274+')';}else{if(_0x114f4a[_0x14bf44(0x108)]&&_0x114f4a[_0x14bf44(0x108)]['total_available']!==undefined){const _0x12b0c4=_0x114f4a[_0x14bf44(0x108)][_0x14bf44(0x138)],_0x3221c2=_0x12b0c4/0x7a120;_0x3cdca6='API可用额度:\x20'+_0x3221c2['toFixed'](0x2)+_0x14bf44(0x11e)+_0x12b0c4+')';}else{if(_0x2810bb)toastr[_0x14bf44(0x150)](_0x14bf44(0x118));console['error']('API\x20Balance\x20Checker:\x20Invalid\x20data\x20format\x20from\x20proxy.',_0x114f4a);return;}}}if(_0x2810bb)toastr[_0x14bf44(0x117)](_0x3cdca6);console[_0x14bf44(0x14d)](_0x14bf44(0x122)+(_0x30e0bf?'\x20Auto':'')+':\x20'+_0x3cdca6);}else{const _0xfeeeb=_0x114f4a[_0x14bf44(0x150)]||_0x14bf44(0x130)+_0x1f652a[_0x14bf44(0x127)];if(_0x2810bb)toastr[_0x14bf44(0x150)]('查询失败:\x20'+_0xfeeeb);console[_0x14bf44(0x150)](_0x14bf44(0x122)+(_0x30e0bf?'\x20Auto':'')+':\x20Query\x20failed:\x20'+_0xfeeeb);}}}catch(_0x19d0e3){console[_0x14bf44(0x150)](_0x14bf44(0x122)+(_0x30e0bf?_0x14bf44(0xfc):'')+'\x20Error:',_0x19d0e3);const _0x505f32=_0x30e0bf?$(_0x14bf44(0x111))['is'](_0x14bf44(0x10c)):!![];if(_0x505f32)toastr[_0x14bf44(0x150)]('查询失败:\x20'+_0x19d0e3[_0x14bf44(0x144)]);}finally{toastr[_0x14bf44(0x14a)][_0x14bf44(0x155)]=!![],_0x18eb7f==='siliconflow'&&$(_0x14bf44(0x151))['removeClass'](_0x14bf44(0x131)),!_0x30e0bf&&_0x238e20['removeClass']('fa-spinner\x20fa-spin\x20active')[_0x14bf44(0x121)](_0x14bf44(0x114));}};$(document)['on'](_0x2352ed(0x13f),'#api-balance-checker-button',()=>_0x244db9(![]));const _0x178a29=SillyTavern[_0x2352ed(0xfe)]();_0x178a29&&_0x178a29['eventSource']&&_0x178a29[_0x2352ed(0x13a)]['on'](_0x178a29[_0x2352ed(0x10e)][_0x2352ed(0x15a)],()=>{const _0x4ef6f3=_0x2352ed;$(_0x4ef6f3(0x120))['is'](_0x4ef6f3(0x10c))&&_0x244db9(!![]);}),$(document)['on']('click',_0x2352ed(0x154),function(){const _0x4a6491=_0x2352ed,_0x35ac4c=$(this)[_0x4a6491(0x15c)](_0x4a6491(0xff)),_0x560510=$(this)[_0x4a6491(0x123)](_0x4a6491(0xfb));_0x35ac4c[_0x4a6491(0x157)](0xc8),_0x560510['toggleClass'](_0x4a6491(0x12a));}),$(document)['on'](_0x2352ed(0xf8),'#api-balance-checker-auto-enabled,\x20#api-balance-checker-auto-notify,\x20#api-balance-checker-api-endpoint',function(){const _0x198178=_0x2352ed,_0x3998dd=$(this)[_0x198178(0x112)]('id'),_0x4c0aa6=$(this)['is'](_0x198178(0x10d))?$(this)['is'](':checked'):$(this)[_0x198178(0x13b)]();localStorage[_0x198178(0x132)](_0x3998dd,_0x4c0aa6);});}));function a0_0x48fd(_0x228d6a,_0x5e5db5){const _0x4a33fe=a0_0x4a33();return a0_0x48fd=function(_0x48fd2e,_0x355727){_0x48fd2e=_0x48fd2e-0xf8;let _0xaf5f2b=_0x4a33fe[_0x48fd2e];return _0xaf5f2b;},a0_0x48fd(_0x228d6a,_0x5e5db5);}function a0_0x4a33(){const _0x1f3c4e=['查询失败:\x20','removeClass','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22api-balance-checker-button\x22\x20class=\x22drawer\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22drawer-toggle\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22drawer-icon\x20fa-solid\x20fa-wallet\x20fa-fw\x20closedIcon\x20interactable\x22\x20title=\x22查询余额\x22\x20data-i18n=\x22[title]Check\x20Balance\x22\x20tabindex=\x220\x22\x20role=\x22button\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','siliconflow','true','\x20(原始值:\x20','获取自定义API密钥失败:\x20','#api-balance-checker-auto-enabled','addClass','API\x20Balance\x20Checker','find','9015507cOzxNO','<br>余额:\x20','prop','status','#api-balance-checker-api-endpoint','654582ZWPKsL','up\x20down','api_key_custom','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22api-balance-checker-config-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22inline-drawer-toggle\x20inline-drawer-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<b\x20data-i18n=\x22API\x20Balance\x20Check\x20Settings\x22>API余额查询设置</b>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22inline-drawer-icon\x20fa-solid\x20fa-circle-chevron-down\x20down\x20interactable\x22\x20tabindex=\x220\x22\x20role=\x22button\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22inline-drawer-content\x22\x20style=\x22display:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22padding:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22checkbox_label\x22\x20for=\x22api-balance-checker-auto-enabled\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20id=\x22api-balance-checker-auto-enabled\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20data-i18n=\x22Auto-check\x20balance\x20after\x20generation\x22>在每次生成完成后自动查询余额</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22checkbox_label\x22\x20style=\x22margin-top:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20id=\x22api-balance-checker-auto-notify\x22\x20checked>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20data-i18n=\x22Show\x20notification\x20on\x20auto-check\x22>自动查询时显示通知</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-top:\x2015px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22api-balance-checker-api-endpoint\x22\x20data-i18n=\x22API\x20Endpoint\x20Type\x22>API端点类型:</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<select\x20id=\x22api-balance-checker-api-endpoint\x22\x20class=\x22text_pole\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22api/usage/token\x22\x20data-i18n=\x22api/usage/token\x22>api/usage/token</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22dashboard/billing/usage\x22\x20data-i18n=\x22dashboard/billing/usage\x22>dashboard/billing/usage</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22siliconflow\x22\x20data-i18n=\x22siliconflow\x22>siliconflow</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</select>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','Custom\x20API\x20key\x20(api_key_custom)\x20not\x20found\x20in\x20secrets.','服务器返回状态\x20','api-balance-checker-api-endpoint','代理服务器返回状态\x20','siliconflow-query','setItem','4027195XVeErt','#api-balance-checker-button','https://api.siliconflow.cn/v1/user/info','6094528WPwkpw','53984SjUABB','total_available','fa-spinner\x20fa-spin\x20active','eventSource','val','length','\x20|\x20赠金:\x20','stringify','click','API可用额度:\x20','747188covFNe','GET','getItem','message','custom',':\x20Query\x20failed:\x20','toggleClass','API\x20Balance\x20Checker\x20Error:','undefined','options','POST','checked','log','/api/secrets/view','API已使用额度:\x20','error','body','77qQpZpZ','OpenAI\x20settings\x20not\x20loaded\x20yet.\x20Please\x20wait\x20and\x20try\x20again.','#api-balance-checker-config-section\x20.inline-drawer-toggle','escapeHtml','total_usage','slideToggle','after','custom_url','GENERATION_ENDED','totalBalance','next','#api-balance-checker-config-section','#extensions_settings','change','#api-balance-checker-button\x20.drawer-icon','https://api.proxy.xuxue07.cn/proxy-request','.inline-drawer-icon','\x20Auto','Bearer\x20','getContext','.inline-drawer-content','api_key','origin','Failed\x20to\x20fetch\x20secrets\x20(status:\x20','api/usage/token','active','append','balance','2884dKomAQ','data','chat_completion_source','toFixed','#extensions-settings-button',':checked',':checkbox','eventTypes','chatCompletionSettings','fa-spinner\x20fa-spin','#api-balance-checker-auto-notify','attr','5511pervvX','fa-wallet','api-balance-checker-auto-notify','json','info','查询失败:\x20代理返回数据格式不正确。'];a0_0x4a33=function(){return _0x1f3c4e;};return a0_0x4a33();}
+/**
+ * API Balance Checker - SillyTavern Extension
+ * 
+ * 功能：查询 API 账户余额，支持以下端点：
+ *   - api/usage/token (通用)
+ *   - dashboard/billing/usage (OpenAI 兼容)
+ *   - siliconflow (硅基流动)
+ * 
+ * 反编译自 index.js (javascript-obfuscator 混淆)
+ */
+
+jQuery(() => {
+    console.log('API Balance Checker: Initializing button.');
+
+    // ========== 注入按钮 UI ==========
+    if ($('#api-balance-checker-button').length === 0) {
+        const buttonHtml = `
+            <div id="api-balance-checker-button" class="drawer">
+                <div class="drawer-toggle">
+                    <div class="drawer-icon fa-solid fa-wallet fa-fw closedIcon interactable" title="查询余额" data-i18n="[title]Check Balance" tabindex="0" role="button"></div>
+                </div>
+            </div>
+        `;
+        $('#extensions-settings-button').after(buttonHtml);
+    }
+
+    // ========== 注入设置面板 UI ==========
+    if ($('#api-balance-checker-config-section').length === 0) {
+        const configHtml = `
+            <div id="api-balance-checker-config-section">
+                <div class="inline-drawer-toggle inline-drawer-header">
+                    <b data-i18n="API Balance Check Settings">API余额查询设置</b>
+                    <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down interactable" tabindex="0" role="button"></div>
+                </div>
+                <div class="inline-drawer-content" style="display: none;">
+                    <div style="padding: 10px;">
+                        <label class="checkbox_label" for="api-balance-checker-auto-enabled">
+                            <input type="checkbox" id="api-balance-checker-auto-enabled">
+                            <span data-i18n="Auto-check balance after generation">在每次生成完成后自动查询余额</span>
+                        </label>
+                        <div class="checkbox_label" style="margin-top: 10px;">
+                            <input type="checkbox" id="api-balance-checker-auto-notify" checked>
+                            <span data-i18n="Show notification on auto-check">自动查询时显示通知</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <label for="api-balance-checker-api-endpoint" data-i18n="API Endpoint Type">API端点类型:</label>
+                            <select id="api-balance-checker-api-endpoint" class="text_pole">
+                                <option value="api/usage/token" data-i18n="api/usage/token">api/usage/token</option>
+                                <option value="dashboard/billing/usage" data-i18n="dashboard/billing/usage">dashboard/billing/usage</option>
+                                <option value="siliconflow" data-i18n="siliconflow">siliconflow</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        $('#extensions_settings').append(configHtml);
+
+        // 从 localStorage 恢复设置
+        const autoEnabled = localStorage.getItem('api-balance-checker-auto-enabled') === 'true';
+        const autoNotify = localStorage.getItem('api-balance-checker-auto-notify') !== 'false';
+        const apiEndpoint = localStorage.getItem('api-balance-checker-api-endpoint') || 'api/usage/token';
+
+        $('#api-balance-checker-auto-enabled').prop('checked', autoEnabled);
+        $('#api-balance-checker-auto-notify').prop('checked', autoNotify);
+        $('#api-balance-checker-api-endpoint').val(apiEndpoint);
+    }
+
+    // ========== 核心查询函数 ==========
+    const checkBalance = async (isAuto = false) => {
+        // 禁用 HTML 转义以便显示 HTML 格式的 toast
+        toastr.options.escapeHtml = false;
+
+        const context = SillyTavern.getContext();
+
+        // 检查 OpenAI 设置是否已加载
+        if (typeof context.chatCompletionSettings === 'undefined') {
+            if (!isAuto) toastr.error('OpenAI settings not loaded yet. Please wait and try again.');
+            return;
+        }
+
+        const buttonIcon = $('#api-balance-checker-button .drawer-icon');
+
+        // 非自动模式下显示加载动画
+        if (!isAuto) {
+            buttonIcon.toggleClass('active');
+            buttonIcon.removeClass('fa-wallet').addClass('fa-spinner fa-spin');
+        }
+
+        let apiEndpoint;
+
+        try {
+            let apiKey = context.chatCompletionSettings.api_key;
+            let customUrl = context.chatCompletionSettings.custom_url;
+
+            // 如果使用自定义 API 源，尝试从 secrets 获取密钥
+            if (context.chatCompletionSettings.chat_completion_source === 'custom') {
+                try {
+                    const headers = context.getRequestHeaders();
+                    const response = await fetch('/api/secrets/view', {
+                        method: 'POST',
+                        headers: headers,
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch secrets (status: ' + response.status + ')');
+                    }
+
+                    const secrets = await response.json();
+
+                    if (secrets.api_key_custom) {
+                        apiKey = secrets.api_key_custom;
+                    } else {
+                        throw new Error('Custom API key (api_key_custom) not found in secrets.');
+                    }
+                } catch (err) {
+                    console.error('API Balance Checker Error:', err);
+                    if (!isAuto) toastr.error('获取自定义API密钥失败: ' + err.message);
+                    if (!isAuto) buttonIcon.removeClass('fa-spinner fa-spin active').addClass('fa-wallet');
+                    return;
+                }
+            }
+
+            if (!customUrl || !apiKey) {
+                throw new Error('未在OpenAI设置中找到自定义URL或API密钥。');
+            }
+
+            apiEndpoint = localStorage.getItem('api-balance-checker-api-endpoint') || 'api/usage/token';
+
+            // ===== 硅基流动 (SiliconFlow) 专用查询 =====
+            if (apiEndpoint === 'siliconflow') {
+                $('body').addClass('siliconflow-query');
+
+                const siliconflowUrl = 'https://api.siliconflow.cn/v1/user/info';
+                const siliconflowResponse = await fetch(siliconflowUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + apiKey,
+                    },
+                });
+
+                const siliconflowData = await siliconflowResponse.json();
+                const shouldNotify = isAuto ? $('#api-balance-checker-auto-notify').is(':checked') : true;
+
+                if (siliconflowResponse.ok) {
+                    let balanceInfo = '硅基总额度: ' + siliconflowData.data.balance
+                        + '<br>余额: ' + siliconflowData.data.chargeBalance
+                        + ' | 赠金: ' + siliconflowData.data.totalBalance;
+
+                    if (shouldNotify) toastr.info(balanceInfo);
+                    console.log('API Balance Checker' + (isAuto ? ' Auto' : '') + ': ' + balanceInfo);
+                } else {
+                    const errorMsg = siliconflowData.message || '服务器返回状态 ' + siliconflowResponse.status;
+                    if (shouldNotify) toastr.error('查询失败: ' + errorMsg);
+                    console.error('API Balance Checker' + (isAuto ? ' Auto' : '') + ': Query failed: ' + errorMsg);
+                }
+            }
+            // ===== 通用代理查询 (api/usage/token 和 dashboard/billing/usage) =====
+            else {
+                const apiOrigin = new URL(customUrl).origin;
+                const fullApiUrl = apiOrigin + '/' + apiEndpoint;
+
+                const proxyResponse = await fetch('https://apiproxy.9e.nz/proxy-request', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        apiKey: apiKey,
+                        apiUrl: fullApiUrl,
+                    }),
+                });
+
+                const proxyData = await proxyResponse.json();
+                const shouldNotify = isAuto ? $('#api-balance-checker-auto-notify').is(':checked') : true;
+
+                if (proxyResponse.ok) {
+                    let balanceText = '';
+
+                    if (proxyData.total_usage !== undefined) {
+                        // total_usage 格式 (以分为单位)
+                        const usageDollars = proxyData.total_usage / 100;
+                        balanceText = 'API已使用额度: ' + usageDollars.toFixed(2);
+                    } else if (proxyData.total_available !== undefined) {
+                        // total_available 格式 (以 token 为单位)
+                        const availableTokens = proxyData.total_available;
+                        const availableDollars = availableTokens / 500000;
+                        balanceText = 'API可用额度: ' + availableDollars.toFixed(2) + ' (原始值: ' + availableTokens + ')';
+                    } else if (proxyData.data && proxyData.data.total_available !== undefined) {
+                        // 嵌套 data.total_available 格式
+                        const nestedAvailable = proxyData.data.total_available;
+                        const nestedDollars = nestedAvailable / 500000;
+                        balanceText = 'API可用额度: ' + nestedDollars.toFixed(2) + ' (原始值: ' + nestedAvailable + ')';
+                    } else {
+                        if (shouldNotify) toastr.error('查询失败: 代理返回数据格式不正确。');
+                        console.error('API Balance Checker: Invalid data format from proxy.', proxyData);
+                        return;
+                    }
+
+                    if (shouldNotify) toastr.info(balanceText);
+                    console.log('API Balance Checker' + (isAuto ? ' Auto' : '') + ': ' + balanceText);
+                } else {
+                    const errorMsg = proxyData.error || '代理服务器返回状态 ' + proxyResponse.status;
+                    if (shouldNotify) toastr.error('查询失败: ' + errorMsg);
+                    console.error('API Balance Checker' + (isAuto ? ' Auto' : '') + ': Query failed: ' + errorMsg);
+                }
+            }
+        } catch (err) {
+            console.error('API Balance Checker' + (isAuto ? ' Auto' : '') + ' Error:', err);
+            const shouldNotify = isAuto ? $('#api-balance-checker-auto-notify').is(':checked') : true;
+            if (shouldNotify) toastr.error('查询失败: ' + err.message);
+        } finally {
+            // 恢复 HTML 转义
+            toastr.options.escapeHtml = true;
+
+            // 移除 siliconflow 查询样式
+            if (apiEndpoint === 'siliconflow') {
+                $('body').removeClass('siliconflow-query');
+            }
+
+            // 恢复按钮图标
+            if (!isAuto) {
+                buttonIcon.removeClass('fa-spinner fa-spin active').addClass('fa-wallet');
+            }
+        }
+    };
+
+    // ========== 事件绑定 ==========
+
+    // 点击按钮手动查询
+    $(document).on('click', '#api-balance-checker-button', () => checkBalance(false));
+
+    // 生成完成后自动查询
+    const context = SillyTavern.getContext();
+    if (context && context.eventSource) {
+        context.eventSource.on(context.eventTypes.GENERATION_ENDED, () => {
+            if ($('#api-balance-checker-auto-enabled').is(':checked')) {
+                checkBalance(true);
+            }
+        });
+    }
+
+    // 设置面板折叠/展开
+    $(document).on('click', '#api-balance-checker-config-section .inline-drawer-toggle', function () {
+        const content = $(this).next('.inline-drawer-content');
+        const icon = $(this).find('.inline-drawer-icon');
+        content.slideToggle(200);
+        icon.toggleClass('up down');
+    });
+
+    // 设置项变更自动保存到 localStorage
+    $(document).on('change', '#api-balance-checker-auto-enabled, #api-balance-checker-auto-notify, #api-balance-checker-api-endpoint', function () {
+        const id = $(this).attr('id');
+        const value = $(this).is(':checkbox') ? $(this).is(':checked') : $(this).val();
+        localStorage.setItem(id, value);
+    });
+});
