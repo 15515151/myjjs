@@ -45,8 +45,8 @@ jQuery(() => {
                         <div style="margin-top: 15px;">
                             <label for="api-balance-checker-api-endpoint" data-i18n="API Endpoint Type">API端点类型:</label>
                             <select id="api-balance-checker-api-endpoint" class="text_pole">
-                                <option value="api/usage/token" data-i18n="api/usage/token">api/usage/token</option>
                                 <option value="dashboard/billing/usage" data-i18n="dashboard/billing/usage">dashboard/billing/usage</option>
+                                <option value="api/usage/token" data-i18n="api/usage/token">api/usage/token</option>
                                 <option value="siliconflow" data-i18n="siliconflow">siliconflow</option>
                             </select>
                         </div>
