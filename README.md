@@ -20,6 +20,23 @@ SillyTavern 扩展插件 —— 一键查询 API 账户余额。
 - **硅基流动**：直接调用 `https://api.siliconflow.cn/v1/user/info` 查询
 - **其他端点**：通过代理服务 `https://apiproxy.9e.nz/proxy-request` 转发查询
 
+## ⚠️ 前置要求
+
+使用本插件前，需要先修改 SillyTavern 的配置文件以允许插件访问 API 密钥：
+
+1. 打开 `SillyTavern/config.yaml`
+2. 找到 `allowKeysExposure` 配置项，将其改为 `true`：
+
+```diff
+-allowKeysExposure: false
++allowKeysExposure: true
+```
+
+3. 重启 SillyTavern 使配置生效
+
+> [!IMPORTANT]
+> 如果不开启此选项，插件将无法读取你配置的 API 密钥，余额查询功能将无法正常使用。
+
 ## 📦 安装
 
 1. 将本项目文件夹放入 SillyTavern 的 `data/default-user/extensions/third-party/` 目录下
